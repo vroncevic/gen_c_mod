@@ -31,7 +31,7 @@ declare -A GEN_C_MODULE_USAGE=(
 	[USAGE_TOOL]="__${GEN_C_MODULE}"
 	[USAGE_ARG1]="[MODULE NAME] Name of module"
 	[USAGE_EX_PRE]="# Example generating module-pair"
-	[USAGE_EX]="__${GEN_C_MODULE} MNAME"
+	[USAGE_EX]="__${GEN_C_MODULE} MN"
 )
 
 declare -A GEN_C_MODULE_LOGGING=(
@@ -62,8 +62,8 @@ TOOL_NOTIFY="false"
 # @usage
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #
-# local MNAME="gen_user_name"
-# __gen_c_module "$MNAME"
+# local MN="gen_user_name"
+# __gen_c_module "$MN"
 # local STATUS=$?
 #
 # if [ $STATUS -eq $SUCCESS ]; then
@@ -73,8 +73,8 @@ TOOL_NOTIFY="false"
 # fi
 #
 function __gen_c_module() {
-	local MNAME=$1
-	if [ -n "${MNAME}" ]; then
+	local MN=$1
+	if [ -n "${MN}" ]; then
 		local FUNC=${FUNCNAME[0]} MSG="None" STATUS_CONF STATUS_CONF_UTIL STATUS
 		MSG="Loading basic and util configuration!"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_C_MODULE_TOOL"
@@ -98,12 +98,12 @@ function __gen_c_module() {
 		TOOL_LOG=${config_gen_c_module[LOGGING]}
 		TOOL_DBG=${config_gen_c_module[DEBUGGING]}
 		TOOL_NOTIFY=${config_gen_c_module[EMAILING]}
-		local SRCF="${MNAME}.c" SLINE TAB="	"
-		local UMNAME=$(echo ${MNAME} | tr 'a-z' 'A-Z')
+		local SRCF="${MN}.c" T="	" SLINE
+		local UMN=$(echo ${MN} | tr 'a-z' 'A-Z')
 		local ST=${config_gen_c_module_util[SOURCE_TEMPLATE]}
 		local STF="${GEN_C_MODULE_HOME}/conf/${ST}"
-		local AUTHOR_NAME=${config_gen_c_module_util[AUTHOR_NAME]}
-		local AUTHOR_EMAIL=${config_gen_c_module_util[AUTHOR_EMAIL]}
+		local AN=${config_gen_c_module_util[AUTHOR_NAME]}
+		local AE=${config_gen_c_module_util[AUTHOR_EMAIL]}
 		MSG="Generating file [${SRCF}]"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_C_MODULE_TOOL"
 		while read SLINE
@@ -111,7 +111,7 @@ function __gen_c_module() {
 			eval echo "${SLINE}" >> ${SRCF}
 		done < ${STF}
 		local HLINE HT=${config_gen_c_module_util[HEADER_TEMPLATE]} TREE
-		local HTF="${GEN_C_MODULE_HOME}/conf/${HT}" HEDF="${MNAME}.h"
+		local HTF="${GEN_C_MODULE_HOME}/conf/${HT}" HEDF="${MN}.h"
 		MSG="Generate file [${HEDF}]"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_C_MODULE_TOOL"
 		while read HLINE
