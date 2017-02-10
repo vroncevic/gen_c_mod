@@ -128,6 +128,9 @@ function __gen_c_module() {
 		__info_debug_message "$MSG" "$FUNC" "$GEN_C_MODULE_TOOL"
 		eval "chmod 644 ${SRCF}"
 		eval "chmod 644 ${HEDF}"
+		MSG="Generated C module ${MN}"
+		GEN_C_MODULE_LOGGING[LOG_MSGE]=$MSG
+		__logging GEN_C_MODULE_LOGGING
 		__info_debug_message "Done" "$FUNC" "$GEN_C_MODULE_TOOL"
 		TREE=$(which tree)
 		__check_tool "${TREE}"
