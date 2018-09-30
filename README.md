@@ -1,4 +1,4 @@
-# Generate C Module (Bash script).
+# Generate C Module.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
