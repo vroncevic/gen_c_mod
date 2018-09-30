@@ -18,7 +18,7 @@ cp -R ~/gen_c_mod/log/   /root/scripts/gen_c_mod/ver.1.0/
 
 This module requires these other modules and libraries:
 
-	* sh_util https://github.com/vroncevic/sh_util
+* sh_util https://github.com/vroncevic/sh_util
 
 ### COPYRIGHT AND LICENCE
 
