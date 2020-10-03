@@ -1,15 +1,14 @@
-# Generate C Module.
+# Generate C Module
 
 **gen_c_mod** is shell tool for generating C module.
 
-Developed in [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) code: **100%**.
+Developed in **[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))** code: **100%**.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-[![GitHub issues open](https://img.shields.io/github/issues/vroncevic/gen_c_mod.svg)](https://github.com/vroncevic/gen_c_mod/issues)
- [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/gen_c_mod.svg)](https://github.com/vroncevic/gen_c_mod/graphs/contributors)
+[![GitHub issues open](https://img.shields.io/github/issues/vroncevic/gen_c_mod.svg)](https://github.com/vroncevic/gen_c_mod/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/gen_c_mod.svg)](https://github.com/vroncevic/gen_c_mod/graphs/contributors)
 
 <!-- START doctoc -->
 **Table of Contents**
@@ -22,9 +21,9 @@ other information that should be provided before the modules are installed.
 - [Copyright and Licence](#copyright-and-licence)
 <!-- END doctoc -->
 
-### INSTALLATION
+### Installation
 
-Navigate to release [page](https://github.com/vroncevic/gen_c_mod/releases) download and extract release archive.
+Navigate to release **[page](https://github.com/vroncevic/gen_c_mod/releases)** download and extract release archive.
 
 To install **gen_c_mod** type the following:
 
@@ -40,7 +39,7 @@ cp -R ~/sh_tool/log/   /root/scripts/gen_c_mod/ver.1.0/
 
 Or You can use docker to create image/container.
 
-### USAGE
+### Usage
 
 ```
 # Create symlink for shell tool
@@ -53,12 +52,12 @@ export PATH=${PATH}:/root/bin/
 gen_c_mod SimpleTest
 ```
 
-### DEPENDENCIES
+### Dependencies
 
 **gen_c_mod** requires next modules and libraries:
 * sh_util [https://github.com/vroncevic/sh_util](https://github.com/vroncevic/sh_util)
 
-### SHELL TOOL STRUCTURE
+### Shell tool structure
 
 ***gen_c_mod*** is based on MOP.
 
@@ -77,7 +76,7 @@ Code structure:
     └── gen_c_mod.log
 ```
 
-### DOCS
+### Docs
 
 [![Documentation Status](https://readthedocs.org/projects/gen_c_mod/badge/?version=latest)](https://gen_c_mod.readthedocs.io/projects/gen_c_mod/en/latest/?badge=latest)
 
@@ -85,13 +84,13 @@ More documentation and info at:
 * [https://gen_c_mod.readthedocs.io/en/latest/](https://gen_c_mod.readthedocs.io/en/latest/)
 * [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 
-### COPYRIGHT AND LICENCE
+### Copyright and licence
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Copyright (C) 2017 by [vroncevic.github.io/gen_c_mod](https://vroncevic.github.io/gen_c_mod)
 
-This tool is free software; you can redistribute it and/or modify
+**gen_c_mod** is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,
 at your option, any later version of Bash 4 you may have available.
 
