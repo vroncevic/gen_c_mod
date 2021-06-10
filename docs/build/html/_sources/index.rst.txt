@@ -41,11 +41,11 @@ To install **gen_c_mod** type the following:
 
 .. code-block:: bash
 
-   tar xvzf gen_c_mod-x.y.z.tar.gz
-   cd gen_c_mod-x.y.z
-   cp -R ~/sh_tool/bin/   /root/scripts/gen_c_mod/ver.1.0/
-   cp -R ~/sh_tool/conf/  /root/scripts/gen_c_mod/ver.1.0/
-   cp -R ~/sh_tool/log/   /root/scripts/gen_c_mod/ver.1.0/
+   tar xvzf gen_c_mod-x.y.tar.gz
+   cd gen_c_mod-x.y
+   cp -R ~/sh_tool/bin/   /root/scripts/gen_c_mod/ver.x.y/
+   cp -R ~/sh_tool/conf/  /root/scripts/gen_c_mod/ver.x.y/
+   cp -R ~/sh_tool/log/   /root/scripts/gen_c_mod/ver.x.y/
 
 Or You can use Docker to create image/container.
 
@@ -70,7 +70,7 @@ Code structure:
 
 .. code-block:: bash
 
-   .
+   sh_tool/
    ├── bin/
    │   └── gen_c_mod.sh
    ├── conf/

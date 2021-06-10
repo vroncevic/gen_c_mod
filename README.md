@@ -1,3 +1,5 @@
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/gen_c_mod/dev/docs/gen_c_mod_logo.png" width="25%">
+
 # Generate C Module
 
 **gen_c_mod** is shell tool for generating C module.
@@ -32,11 +34,11 @@ Navigate to release **[page](https://github.com/vroncevic/gen_c_mod/releases)** 
 To install **gen_c_mod** type the following:
 
 ```
-tar xvzf gen_c_mod-x.y.z.tar.gz
-cd gen_c_mod-x.y.z
-cp -R ~/sh_tool/bin/   /root/scripts/gen_c_mod/ver.1.0/
-cp -R ~/sh_tool/conf/  /root/scripts/gen_c_mod/ver.1.0/
-cp -R ~/sh_tool/log/   /root/scripts/gen_c_mod/ver.1.0/
+tar xvzf gen_c_mod-x.y.tar.gz
+cd gen_c_mod-x.y
+cp -R ~/sh_tool/bin/   /root/scripts/gen_c_mod/ver.x.y/
+cp -R ~/sh_tool/conf/  /root/scripts/gen_c_mod/ver.x.y/
+cp -R ~/sh_tool/log/   /root/scripts/gen_c_mod/ver.x.y/
 ```
 
 ![alt tag](https://raw.githubusercontent.com/vroncevic/gen_c_mod/dev/docs/setup_tree.png)
@@ -49,7 +51,7 @@ Or You can use docker to create image/container.
 
 ```
 # Create symlink for shell tool
-ln -s /root/scripts/gen_c_mod/ver.1.0/bin/gen_c_mod.sh /root/bin/gen_c_mod
+ln -s /root/scripts/gen_c_mod/ver.x.y/bin/gen_c_mod.sh /root/bin/gen_c_mod
 
 # Setting PATH
 export PATH=${PATH}:/root/bin/
@@ -69,7 +71,7 @@ gen_c_mod SimpleTest
 
 Code structure:
 ```
-.
+sh_tool/
 ├── bin/
 │   └── gen_c_mod.sh
 ├── conf/
