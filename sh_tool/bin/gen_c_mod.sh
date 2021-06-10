@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Generate module-pair source and header code (C)
-# @version ver.1.0.0
+# @version ver.1.0
 # @date    Tue Jan 10 11:37:27 CET 2017
 # @company None, free software to use 2016
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -121,8 +121,8 @@ function __gen_c_mod {
         done < ${HTF}
         MSG="Set owner!"
         info_debug_message "$MSG" "$FUNC" "$GEN_C_MOD_TOOL"
-        local USRID=${config_gen_c_mod_util[UID]}
-        local GRPID=${config_gen_c_mod_util[GID]}
+        local USRID=${config_gen_c_mod_util[USERID]}
+        local GRPID=${config_gen_c_mod_util[GROUPID]}
         eval "chown ${USRID}.${GRPID} ${SRCF}"
         eval "chown ${USRID}.${GRPID} ${HEDF}"
         MSG="Set permission!"
