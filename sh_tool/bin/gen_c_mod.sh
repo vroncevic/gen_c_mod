@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 # @brief   Generate module-pair source and header code (C)
-# @version ver.1.0
-# @date    Tue Jan 10 11:37:27 CET 2017
-# @company None, free software to use 2016
+# @version ver.2.0
+# @date    Sun 05 Dec 2021 04:03:07 PM CET
+# @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
 #
 UTIL_ROOT=/root/scripts
@@ -20,18 +20,25 @@ UTIL_LOG=${UTIL}/log
 .    ${UTIL}/bin/load_util_conf.sh
 .    ${UTIL}/bin/progress_bar.sh
 
-GEN_C_MOD_TOOL=gen_c_module
-GEN_C_MOD_VERSION=ver.1.0
+GEN_C_MOD_TOOL=gen_c_mod
+GEN_C_MOD_VERSION=ver.2.0
 GEN_C_MOD_HOME=${UTIL_ROOT}/${GEN_C_MOD_TOOL}/${GEN_C_MOD_VERSION}
 GEN_C_MOD_CFG=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}.cfg
 GEN_C_MOD_UTIL_CFG=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}_util.cfg
+GEN_C_MOD_LOGO=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}.logo
 GEN_C_MOD_LOG=${GEN_C_MOD_HOME}/log
+
+tabs 4
+CONSOLE_WIDTH=$(stty size | awk '{print $2}')
+
+.    ${GEN_C_MOD_HOME}/bin/center.sh
+.    ${GEN_C_MOD_HOME}/bin/display_logo.sh
 
 declare -A GEN_C_MOD_USAGE=(
     [USAGE_TOOL]="${GEN_C_MODULE}"
     [USAGE_ARG1]="[MODULE NAME] Name of module"
     [USAGE_EX_PRE]="# Example generating module-pair"
-    [USAGE_EX]="${GEN_C_MODULE} MN"
+    [USAGE_EX]="${GEN_C_MODULE} rtp"
 )
 
 declare -A GEN_C_MOD_LOGGING=(
@@ -74,6 +81,7 @@ TOOL_NOTIFY="false"
 #
 function __gen_c_mod {
     local MN=$1
+    display_logo
     if [ -n "${MN}" ]; then
         local FUNC=${FUNCNAME[0]} MSG="None"
         local STATUS_CONF STATUS_CONF_UTIL STATUS
@@ -162,4 +170,3 @@ if [ $STATUS -eq $SUCCESS ]; then
 fi
 
 exit 127
-

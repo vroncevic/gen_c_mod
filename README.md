@@ -29,9 +29,11 @@ other information that should be provided before the modules are installed.
 
 ### Installation
 
+![Debian Linux OS](https://raw.githubusercontent.com/vroncevic/gen_c_mod/dev/docs/debtux.png)
+
 Navigate to release **[page](https://github.com/vroncevic/gen_c_mod/releases)** download and extract release archive.
 
-To install **gen_c_mod** type the following:
+To install **gen_c_mod** type the following
 
 ```
 tar xvzf gen_c_mod-x.y.tar.gz
@@ -41,7 +43,36 @@ cp -R ~/sh_tool/conf/  /root/scripts/gen_c_mod/ver.x.y/
 cp -R ~/sh_tool/log/   /root/scripts/gen_c_mod/ver.x.y/
 ```
 
-![alt tag](https://raw.githubusercontent.com/vroncevic/gen_c_mod/dev/docs/setup_tree.png)
+Self generated setup script and execution
+```
+./gen_c_mod_setup.sh 
+
+[setup] installing App/Tool/Script gen_c_mod
+	Sun 05 Dec 2021 04:06:35 PM CET
+[setup] copy App/Tool/Script structure
+[setup] remove github editor configuration files
+[setup] set App/Tool/Script permission
+[setup] create symbolic link of App/Tool/Script
+[setup] done
+
+/root/scripts/gen_c_mod/ver.2.0/
+├── bin/
+│   ├── center.sh
+│   ├── display_logo.sh
+│   └── gen_c_mod.sh
+├── conf/
+│   ├── gen_c_mod.cfg
+│   ├── gen_c_mod.logo
+│   ├── gen_c_mod_util.cfg
+│   └── template/
+│       ├── c_source.template
+│       └── h_header.template
+└── log/
+    └── gen_c_mod.log
+
+4 directories, 9 files
+lrwxrwxrwx 1 root root 48 Dec  5 16:06 /root/bin/gen_c_mod -> /root/scripts/gen_c_mod/ver.2.0/bin/gen_c_mod.sh
+```
 
 Or You can use docker to create image/container.
 
@@ -57,25 +88,78 @@ ln -s /root/scripts/gen_c_mod/ver.x.y/bin/gen_c_mod.sh /root/bin/gen_c_mod
 export PATH=${PATH}:/root/bin/
 
 # Generating C module
-gen_c_mod SimpleTest
+gen_c_mod rtp
+
+gen_c_mod ver.2.0
+Sun 05 Dec 2021 04:09:59 PM CET
+
+[check_root] Check permission for current session? [ok]
+[check_root] Done
+
+	                                                 
+	                                               _ 
+	  __ _  ___ _ __     ___   _ __ ___   ___   __| |
+	 / _` |/ _ \ '_ \   / __| | '_ ` _ \ / _ \ / _` |
+	| (_| |  __/ | | | | (__  | | | | | | (_) | (_| |
+	 \__, |\___|_| |_|  \___| |_| |_| |_|\___/ \__,_|
+	 |___/                                           
+	                                                 
+		Info   github.io/gen_c_mod ver.2.0 
+		Issue  github.io/issue
+		Author vroncevic.github.io
+
+[gen_c_mod] Loading basic and util configuration!
+100% [================================================]
+
+[load_conf] Loading App/Tool/Script configuration!
+[check_cfg] Checking configuration file [/root/scripts/gen_c_mod/ver.2.0/conf/gen_c_mod.cfg] [ok]
+[check_cfg] Done
+
+[load_conf] Done
+
+[load_util_conf] Load module configuration!
+[check_cfg] Checking configuration file [/root/scripts/gen_c_mod/ver.2.0/conf/gen_c_mod_util.cfg] [ok]
+[check_cfg] Done
+
+[load_util_conf] Done
+
+[gen_c_mod] Generating file [rtp.c]
+[gen_c_mod] Generate file [rtp.h]
+[gen_c_mod] Set owner!
+[gen_c_mod] Set permission!
+[logging] Checking directory [/root/scripts/gen_c_mod/ver.2.0/log/]? [ok]
+[logging] Write info log!
+[logging] Done
+
+[gen_c_mod] Done
+[check_tool] Checking tool [/usr/bin/tree]? [ok]
+[check_tool] Done
+
+.
+├── rtp.c
+└── rtp.h
+
 ```
 
 ### Dependencies
 
-**gen_c_mod** requires next modules and libraries:
+**gen_c_mod** requires next modules and libraries
 * sh_util [https://github.com/vroncevic/sh_util](https://github.com/vroncevic/sh_util)
 
 ### Shell tool structure
 
 **gen_c_mod** is based on MOP.
 
-Code structure:
+Shell tool structure
 ```
 sh_tool/
 ├── bin/
+│   ├── center.sh
+│   ├── display_logo.sh
 │   └── gen_c_mod.sh
 ├── conf/
 │   ├── gen_c_mod.cfg
+│   ├── gen_c_mod.logo
 │   ├── gen_c_mod_util.cfg
 │   └── template/
 │       ├── c_source.template
@@ -88,7 +172,7 @@ sh_tool/
 
 [![Documentation Status](https://readthedocs.org/projects/gen_c_mod/badge/?version=latest)](https://gen_c_mod.readthedocs.io/projects/gen_c_mod/en/latest/?badge=latest)
 
-More documentation and info at:
+More documentation and info at
 * [https://gen_c_mod.readthedocs.io/en/latest/](https://gen_c_mod.readthedocs.io/en/latest/)
 * [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 
