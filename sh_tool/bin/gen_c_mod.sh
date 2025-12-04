@@ -19,6 +19,7 @@ UTIL_LOG=${UTIL}/log
 .    ${UTIL}/bin/load_conf.sh
 .    ${UTIL}/bin/load_util_conf.sh
 .    ${UTIL}/bin/progress_bar.sh
+.    ${UTIL}/bin/display_logo.sh
 
 GEN_C_MOD_TOOL=gen_c_mod
 GEN_C_MOD_VERSION=ver.3.0
@@ -27,12 +28,6 @@ GEN_C_MOD_CFG=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}.cfg
 GEN_C_MOD_UTIL_CFG=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}_util.cfg
 GEN_C_MOD_LOGO=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}.logo
 GEN_C_MOD_LOG=${GEN_C_MOD_HOME}/log
-
-tabs 4
-CONSOLE_WIDTH=$(stty size | awk '{print $2}')
-
-.    ${GEN_C_MOD_HOME}/bin/center.sh
-.    ${GEN_C_MOD_HOME}/bin/display_logo.sh
 
 declare -A GEN_C_MOD_USAGE=(
     [USAGE_TOOL]="${GEN_C_MODULE}"
@@ -81,8 +76,8 @@ TOOL_NOTIFY="false"
 #
 function __gen_c_mod {
     local MN=$1
-    display_logo
     if [ -n "${MN}" ]; then
+        display_logo "vroncevic" "${GEN_C_MOD_TOOL}" "${GEN_C_MOD_VERSION}" "${GEN_C_MOD_LOGO}"
         local FUNC=${FUNCNAME[0]} MSG="None"
         local STATUS_CONF STATUS_CONF_UTIL STATUS
         MSG="Loading basic and util configuration!"
