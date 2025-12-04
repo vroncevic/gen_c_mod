@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Generate module-pair source and header code (C)
-# @version ver.2.0
+# @version ver.3.0
 # @date    Sun 05 Dec 2021 04:03:07 PM CET
 # @company None, free software to use 2021
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -21,7 +21,7 @@ UTIL_LOG=${UTIL}/log
 .    ${UTIL}/bin/progress_bar.sh
 
 GEN_C_MOD_TOOL=gen_c_mod
-GEN_C_MOD_VERSION=ver.2.0
+GEN_C_MOD_VERSION=ver.3.0
 GEN_C_MOD_HOME=${UTIL_ROOT}/${GEN_C_MOD_TOOL}/${GEN_C_MOD_VERSION}
 GEN_C_MOD_CFG=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}.cfg
 GEN_C_MOD_UTIL_CFG=${GEN_C_MOD_HOME}/conf/${GEN_C_MOD_TOOL}_util.cfg
